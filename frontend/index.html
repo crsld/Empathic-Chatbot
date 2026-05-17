@@ -3,35 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Empathic Chatbot</title>
+  <title>Empathic AI</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
   <div class="chat-wrapper">
     <div class="chat-header">
-      <div class="header-dot"></div>
-      <span>Empathic</span>
+      <div class="header-info">
+        <div class="status-dot"></div>
+        <div class="header-text">
+            <span class="title">Empathic</span>
+            <span class="subtitle">Always listening</span>
+        </div>
+      </div>
+      <i data-lucide="settings" class="header-icon"></i>
     </div>
 
     <div class="chat-messages" id="chatMessages">
-      <div class="message bot">
+      <div class="message bot fade-in">
         <div class="bubble">Hi! I'm here for you. Feel free to share what's on your mind. 💙</div>
       </div>
     </div>
 
-    <div class="mode-bar">
-      <span class="mode-label">Response mode:</span>
-      <button class="mode-btn active" data-mode="casual">Casual</button>
-      <button class="mode-btn" data-mode="comfort">Comfort</button>
-      <button class="mode-btn" data-mode="advice">Advice</button>
+    <div class="mode-container">
+        <div class="mode-bar">
+          <button class="mode-btn active" data-mode="casual">Casual</button>
+          <button class="mode-btn" data-mode="comfort">Comfort</button>
+          <button class="mode-btn" data-mode="advice">Advice</button>
+        </div>
     </div>
 
     <div class="chat-input-area">
-      <textarea id="userInput" placeholder="Type how you feel..." rows="1"></textarea>
-      <button id="sendBtn" disabled>Send</button>
+      <div class="input-wrapper">
+        <textarea id="userInput" placeholder="Type how you feel..." rows="1"></textarea>
+        <button id="sendBtn" disabled>
+            <i data-lucide="send-horizontal"></i>
+        </button>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
